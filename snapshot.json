@@ -1,0 +1,199 @@
+{
+  "version": "1.7.2",
+  "mode": "GITHUB_PAGES",
+  "timestamp": "2026-10-03T11:58:33.974372+00:00",
+  "runs": 27,
+  "models": 48116,
+  "trades": 763036,
+  "lineage": [
+    {
+      "run": "20261003_202435",
+      "sourceReportSHA256": "e1c0ad9cf024b1fba4b874a7c4db6dae8694fe103d6e218b892f5345b7d207f3",
+      "models": 66,
+      "trades": 1044,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_201721",
+      "sourceReportSHA256": "2808d5d7829649f41043da772e884d3101f12c2852c8b4d9e5a0d53ed6ff20ae",
+      "models": 4,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_201030",
+      "sourceReportSHA256": "88bb2ad790dbe46dd74bfe878288993e27dd9502e5f7a5412f3004c4b4578423",
+      "models": 66,
+      "trades": 1176,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_195831",
+      "sourceReportSHA256": "89d4adc4113c646eaf3068293e965a29b51b2ee6af4a58110dd37d18e74397af",
+      "models": 270,
+      "trades": 5072,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_191828",
+      "sourceReportSHA256": "fe895245e13dbde06fcc4938138f653a007dad33af1582271bcb289dfa7b6ce7",
+      "models": 270,
+      "trades": 5072,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_183024",
+      "sourceReportSHA256": "f5552b6a44aecabf76e9900c40e69022fccfc8a21cca1628d569cc5c9b62a701",
+      "models": 6750,
+      "trades": 127932,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_135547",
+      "sourceReportSHA256": "aae6ae39ab1e1614e068464994b68305d43b2d57b30f887261e4362804de883f",
+      "models": 6750,
+      "trades": 39027,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_131841",
+      "sourceReportSHA256": "bc1f40d85dab46406ee23a8991b2ef86c1f115ab54c5a0316969bf3acf654bea",
+      "models": 6750,
+      "trades": 133324,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_102140",
+      "sourceReportSHA256": "590730eb640c4227d1828f8023d06f90ab07de0d2940a228d14418a8f47f7fb3",
+      "models": 66,
+      "trades": 1044,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_030859",
+      "sourceReportSHA256": "b2e15ac1221c5aa3c11d685c5070f9fe1640eca97d0a77ea9a2f5bee954cf2a1",
+      "models": 6,
+      "trades": 220,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_030450",
+      "sourceReportSHA256": "d332fc4967d8d5a95a75e447d9ccfbe2dfc93d8891f714ee41807dbda49be96c",
+      "models": 6,
+      "trades": 78,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_024139",
+      "sourceReportSHA256": "d9c0cf7df68fd3e3aec78b02da0aefef24abf606a8470fd1d769fdcf117cd7ba",
+      "models": 6750,
+      "trades": 47695,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_021106",
+      "sourceReportSHA256": "3b9355db96e99edeef417bfd4f68f3855a1769df4d3d1b3e2ba4590fa82680f3",
+      "models": 6750,
+      "trades": 133324,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_020349",
+      "sourceReportSHA256": "3134e7e18fb046b34bb3280bf586ab57353ae7a5ce032f470f03663f0ffb0c43",
+      "models": 2,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_014218",
+      "sourceReportSHA256": "95b34e6f6976bd3f1cf182e5dd5780675c60480957398d2af101693128c7be01",
+      "models": 2,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_012713",
+      "sourceReportSHA256": "b824b6d067c195f175204b28b832a1832311e11003a953f586fbcd62d6d6c71f",
+      "models": 6750,
+      "trades": 133324,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_005453",
+      "sourceReportSHA256": "4a26d724500c6fb1049574207ea69c74e235e0cb6c0af9147229343ee2f624a6",
+      "models": 6,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004427",
+      "sourceReportSHA256": "09d72916817f6ef448b7e5fa9e486c73a69f1ba594618b97fa720d8644946545",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004426_836233",
+      "sourceReportSHA256": "ec61a4529ac42bb4897a82c8d3acddaa84eebefdfaab0c408a19079cee23a2d4",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004426_608024",
+      "sourceReportSHA256": "1e34c69195f490c0bfe81a5638ba62eedf782ba0a563bcb028ade7ea08afc916",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004426_409096",
+      "sourceReportSHA256": "0799b296cf8a092d0563c7e22f00360397a154330b7691b6df1041119e533c48",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004426",
+      "sourceReportSHA256": "311c05a3d774370871622807a61248250d983b04eaf7d8394c89440f745e6e00",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004425_690629",
+      "sourceReportSHA256": "761e3aa3dc471021f4202e45b79042b30d987684b720bd1674e1ef8a850b7ce3",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004425",
+      "sourceReportSHA256": "fde9ee92041c39481617de3df7de81969cc5f77a3e56f2a8ab99d6dbee55e884",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_004423",
+      "sourceReportSHA256": "3a7835a16188d699989b234da9c52d7e47c4fa13a311b3d8fa6354cab505a65a",
+      "models": 12,
+      "trades": 0,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_003823",
+      "sourceReportSHA256": "89ccf3caa6c371c4ecbfd33f9834da0fc3f9da7892822376341d592deab8f642",
+      "models": 6750,
+      "trades": 134303,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
+    {
+      "run": "20261003_003813",
+      "sourceReportSHA256": "1adc67627fb44fdb447d0f4fefe27d31ce34da100c43ab73b8566f493f8ba8fb",
+      "models": 6,
+      "trades": 401,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    }
+  ]
+}
