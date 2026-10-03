@@ -1,11 +1,18 @@
 {
-  "version": "1.7.2",
+  "version": "1.7.5",
   "mode": "GITHUB_PAGES",
-  "timestamp": "2026-10-03T11:58:33.974372+00:00",
-  "runs": 27,
-  "models": 48116,
-  "trades": 763036,
+  "timestamp": "2026-10-03T13:06:00.496390+00:00",
+  "runs": 28,
+  "models": 54866,
+  "trades": 771562,
   "lineage": [
+    {
+      "run": "20261003_215235",
+      "sourceReportSHA256": "c7ec91978adc952f3ed6ce3bab62fced4bb8d688aa137edb887ecde8862ac817",
+      "models": 6750,
+      "trades": 8526,
+      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+    },
     {
       "run": "20261003_202435",
       "sourceReportSHA256": "e1c0ad9cf024b1fba4b874a7c4db6dae8694fe103d6e218b892f5345b7d207f3",
