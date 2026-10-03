@@ -1,206 +1,258 @@
 {
-  "version": "1.7.5",
+  "version": "1.7.6",
   "mode": "GITHUB_PAGES",
-  "timestamp": "2026-10-03T13:06:00.496390+00:00",
-  "runs": 28,
-  "models": 54866,
-  "trades": 771562,
+  "timestamp": "2026-10-03T16:06:29.482531+00:00",
+  "runs": 31,
+  "models": 75116,
+  "trades": 1020565,
   "lineage": [
+    {
+      "run": "20261003_230214",
+      "sourceReportSHA256": "7ec3c4c7c8c428cf5acf3ca370c4d89f43e42aaa943840eac8c6987b958b627d",
+      "publishedReportSHA256": "48ffd3dfd32e7c2d42bfe5b6d66e0250149b84672e15187d1c62ef76aea257ee",
+      "models": 6750,
+      "trades": 102762,
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
+    },
+    {
+      "run": "20261003_225013",
+      "sourceReportSHA256": "927cf9fd7c19c3ac2b92e78ff47aa6c534f94870851879228d1c5d1a56b4ec13",
+      "publishedReportSHA256": "a6aebfde3c159c2253b2f111c6e9cd8cba17fb405e2d47da76f0922ac297b14a",
+      "models": 6750,
+      "trades": 18309,
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
+    },
+    {
+      "run": "20261003_222038",
+      "sourceReportSHA256": "bc4e153fbf5f0fd738736132c9797620f25ff84ac96300df9a69a7951b8951fc",
+      "publishedReportSHA256": "aa6c40d9912ef28557df1b67d9681c009ca92287a0575d88002763968425f178",
+      "models": 6750,
+      "trades": 127932,
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
+    },
     {
       "run": "20261003_215235",
       "sourceReportSHA256": "c7ec91978adc952f3ed6ce3bab62fced4bb8d688aa137edb887ecde8862ac817",
+      "publishedReportSHA256": "ff8caf178103c42b09a0f8c7695a6e850bfc2af382793b5163a36caf7c2ea2a8",
       "models": 6750,
       "trades": 8526,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_202435",
       "sourceReportSHA256": "e1c0ad9cf024b1fba4b874a7c4db6dae8694fe103d6e218b892f5345b7d207f3",
+      "publishedReportSHA256": "d8446a71a318b62ff9965023e0129eb67f6b9f4aab27324e887cffc566dc6ccc",
       "models": 66,
       "trades": 1044,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_201721",
       "sourceReportSHA256": "2808d5d7829649f41043da772e884d3101f12c2852c8b4d9e5a0d53ed6ff20ae",
+      "publishedReportSHA256": "cbdc13a51d212c18315a0b8ca8e35eb19d4df246a0e3bf4d3d3e1a86af9b70b1",
       "models": 4,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_201030",
       "sourceReportSHA256": "88bb2ad790dbe46dd74bfe878288993e27dd9502e5f7a5412f3004c4b4578423",
+      "publishedReportSHA256": "0f4a4c99ea4b78ab257542572cf4f3eeaec2707f68e4f92df2421057b8a8aa0c",
       "models": 66,
       "trades": 1176,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_195831",
       "sourceReportSHA256": "89d4adc4113c646eaf3068293e965a29b51b2ee6af4a58110dd37d18e74397af",
+      "publishedReportSHA256": "501d7f524f7a26d2ef5a398b239e7b6c6b8463f3888d4cbf3c12a45c5a14ce47",
       "models": 270,
       "trades": 5072,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_191828",
       "sourceReportSHA256": "fe895245e13dbde06fcc4938138f653a007dad33af1582271bcb289dfa7b6ce7",
+      "publishedReportSHA256": "d517eed44f844f7ce2dd8e02528ece6237b45a68d709420178e2b4b8478d60c8",
       "models": 270,
       "trades": 5072,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_183024",
       "sourceReportSHA256": "f5552b6a44aecabf76e9900c40e69022fccfc8a21cca1628d569cc5c9b62a701",
+      "publishedReportSHA256": "b5b5ac684e73f8e16a10230000d10eea4636d7d26ff81c79da485facd62bd1f6",
       "models": 6750,
       "trades": 127932,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_135547",
       "sourceReportSHA256": "aae6ae39ab1e1614e068464994b68305d43b2d57b30f887261e4362804de883f",
+      "publishedReportSHA256": "bbdf04f805647f401994c33ed7bad9fab3e0bdd5d310ac2e56648b56b3544dd2",
       "models": 6750,
       "trades": 39027,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_131841",
       "sourceReportSHA256": "bc1f40d85dab46406ee23a8991b2ef86c1f115ab54c5a0316969bf3acf654bea",
+      "publishedReportSHA256": "b162f47429f364a187a5f39f06e9cc93a6e9291861c68c104d3bd7a3ed0c496d",
       "models": 6750,
       "trades": 133324,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_102140",
       "sourceReportSHA256": "590730eb640c4227d1828f8023d06f90ab07de0d2940a228d14418a8f47f7fb3",
+      "publishedReportSHA256": "40343c155313a211b223016808eac933ea0b88738b4044a0af5be0b43076a717",
       "models": 66,
       "trades": 1044,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_030859",
       "sourceReportSHA256": "b2e15ac1221c5aa3c11d685c5070f9fe1640eca97d0a77ea9a2f5bee954cf2a1",
+      "publishedReportSHA256": "237725f44bcbf7ad353218b6825f3c0daaab344beb88da84caf6790e09d959d0",
       "models": 6,
       "trades": 220,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_030450",
       "sourceReportSHA256": "d332fc4967d8d5a95a75e447d9ccfbe2dfc93d8891f714ee41807dbda49be96c",
+      "publishedReportSHA256": "d3e3fd5ae02f0233ed49705683a9ad688b356765daae680268734ca04f0ff436",
       "models": 6,
       "trades": 78,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_024139",
       "sourceReportSHA256": "d9c0cf7df68fd3e3aec78b02da0aefef24abf606a8470fd1d769fdcf117cd7ba",
+      "publishedReportSHA256": "5909b38f4f40d33e40ffe769dcab05673285054bc35a2aae4e4939f722f3c2dd",
       "models": 6750,
       "trades": 47695,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_021106",
       "sourceReportSHA256": "3b9355db96e99edeef417bfd4f68f3855a1769df4d3d1b3e2ba4590fa82680f3",
+      "publishedReportSHA256": "19f8df18052ec6071b71472116c99f331985f350192e9293a88b67e546042b86",
       "models": 6750,
       "trades": 133324,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_020349",
       "sourceReportSHA256": "3134e7e18fb046b34bb3280bf586ab57353ae7a5ce032f470f03663f0ffb0c43",
+      "publishedReportSHA256": "7addf7e7feaf42a5f9118bbb3be535528f16e18e13990854c7fa7d90cc1edc5b",
       "models": 2,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_014218",
       "sourceReportSHA256": "95b34e6f6976bd3f1cf182e5dd5780675c60480957398d2af101693128c7be01",
+      "publishedReportSHA256": "9ceab47f500e296a30220de61220194819c9c9169a53c461b62bf4da175270d3",
       "models": 2,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_012713",
       "sourceReportSHA256": "b824b6d067c195f175204b28b832a1832311e11003a953f586fbcd62d6d6c71f",
+      "publishedReportSHA256": "9e9a5c3f5feffe5cb132d54b0fe324023885a83c5fd8f6e2600c14c8fd97cca9",
       "models": 6750,
       "trades": 133324,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_005453",
       "sourceReportSHA256": "4a26d724500c6fb1049574207ea69c74e235e0cb6c0af9147229343ee2f624a6",
+      "publishedReportSHA256": "9488aa29fd6ed84ea7802bc529bf6e3a0a1b6c343ba661d6ab4610667ca00ffd",
       "models": 6,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004427",
       "sourceReportSHA256": "09d72916817f6ef448b7e5fa9e486c73a69f1ba594618b97fa720d8644946545",
+      "publishedReportSHA256": "0eb6d3a545779e748c7323362dcc972a55268c7118f79de9ce5a8d116e7ef07d",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004426_836233",
       "sourceReportSHA256": "ec61a4529ac42bb4897a82c8d3acddaa84eebefdfaab0c408a19079cee23a2d4",
+      "publishedReportSHA256": "fb207279bcfc2932d342f9fed5d2f60a6a3758ca6ffe6b839628664743df2b35",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004426_608024",
       "sourceReportSHA256": "1e34c69195f490c0bfe81a5638ba62eedf782ba0a563bcb028ade7ea08afc916",
+      "publishedReportSHA256": "07caf04386105dd8d5cee1c38a7c0efc86dc4a6ec747118495d55481f4827ba9",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004426_409096",
       "sourceReportSHA256": "0799b296cf8a092d0563c7e22f00360397a154330b7691b6df1041119e533c48",
+      "publishedReportSHA256": "d3b82bbf1ce0fcb012df9713da0ad2c6b4bb45bf2f12b9e834d2a48974ecc241",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004426",
       "sourceReportSHA256": "311c05a3d774370871622807a61248250d983b04eaf7d8394c89440f745e6e00",
+      "publishedReportSHA256": "21bcf2500e6fa58681769d629eab03241c82f5be34da28aa7a379bd51ee68821",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004425_690629",
       "sourceReportSHA256": "761e3aa3dc471021f4202e45b79042b30d987684b720bd1674e1ef8a850b7ce3",
+      "publishedReportSHA256": "415beba1db19a6acbe4fb34e343e205ee96dbda5d71f4018594999a08a0e9b9b",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004425",
       "sourceReportSHA256": "fde9ee92041c39481617de3df7de81969cc5f77a3e56f2a8ab99d6dbee55e884",
+      "publishedReportSHA256": "c7e66626eff34df36666019fff074d1220edf44dd190b1ec2e11f8b3248efc18",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_004423",
       "sourceReportSHA256": "3a7835a16188d699989b234da9c52d7e47c4fa13a311b3d8fa6354cab505a65a",
+      "publishedReportSHA256": "ab3041d4c2e67aafed32e1cdaa49c700fa8ac69728591a6fed70c0103d6f0976",
       "models": 12,
       "trades": 0,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_003823",
       "sourceReportSHA256": "89ccf3caa6c371c4ecbfd33f9834da0fc3f9da7892822376341d592deab8f642",
+      "publishedReportSHA256": "1adf3af1b11512b6ef7e55c204895a1287db93ca2aa536b05a93f1209df6fc4a",
       "models": 6750,
       "trades": 134303,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     },
     {
       "run": "20261003_003813",
       "sourceReportSHA256": "1adc67627fb44fdb447d0f4fefe27d31ce34da100c43ab73b8566f493f8ba8fb",
+      "publishedReportSHA256": "6eed9d7bb391776541265394301d6bc078f370fa274cdf60a117fe47b866600c",
       "models": 6,
       "trades": 401,
-      "note": "Published JSON omits local filesystem paths; numeric results are unchanged."
+      "note": "Audits bind the original source report. Published JSON omits local filesystem paths; its separate hash verifies the downloaded UTF-8 bytes. Numeric results are unchanged."
     }
   ]
 }
