@@ -32,7 +32,7 @@ window.BTC_PAGES=true;
  window.btcStaticApi=async(path,body)=>{
   const u=new URL(path,base),p=u.pathname,q=u.searchParams,run=q.get('run');
   switch(p){
-   case '/api/health':return {mode:'GITHUB_PAGES',version:'1.7.3'};
+   case '/api/health':return {mode:'GITHUB_PAGES',version:'1.7.4'};
    case '/api/system':return json('data/snapshot.json');
    case '/api/config':return json('data/config.json');
    case '/api/runs':return json('data/runs.json');
