@@ -32,12 +32,13 @@ window.BTC_PAGES=true;
  window.btcStaticApi=async(path,body)=>{
   const u=new URL(path,base),p=u.pathname,q=u.searchParams,run=q.get('run');
   switch(p){
-   case '/api/health':return {mode:'GITHUB_PAGES',version:'1.7.6'};
+   case '/api/health':return {mode:'GITHUB_PAGES',version:'1.7.9'};
    case '/api/system':return json('data/snapshot.json');
    case '/api/config':return json('data/config.json');
    case '/api/runs':return json('data/runs.json');
    case '/api/report':return json(`data/${safe(run)}/report-meta.json`);
-   case '/api/models':{let rows=[...await modelData(run)];const group=q.get('group'),max=q.get('maxDrawdown'),min=Number(q.get('minTrades')||0);rows=rows.filter(m=>(!group||group==='ALL'||m.Group===group)&&(max===null||max===''||m.MaxDrawdownPct!=null&&m.MaxDrawdownPct<=Number(max))&&(m.ClosedTrades||0)>=min&&(q.get('excludeLiquidated')!=='1'||!m.Liquidated));const [field,sign]=sorts[q.get('sort')]||sorts.FinalEquity;rows.sort((a,b)=>a[field]==null?(b[field]==null?b.FinalEquity-a.FinalEquity:1):b[field]==null?-1:(a[field]-b[field])*sign||b.FinalEquity-a.FinalEquity);const limit=Number(q.get('limit')||20),page=Number(q.get('page')||0);return {total:rows.length,page,rows:rows.slice(page*limit,(page+1)*limit)};}
+   case '/api/cycle-risk':{const index=await json('data/risk-index.json'),key=index[safe(run)];if(!key)throw Error('本快照未生成跨周期核验');return json(`data/risk/${safe(key)}.json`);}
+   case '/api/models':{let rows=[...await modelData(run)];const group=q.get('group'),max=q.get('maxDrawdown'),min=Number(q.get('minTrades')||0);rows=rows.filter(m=>(!group||group==='ALL'||m.Group===group||group==='FUTURES'&&m.Market==='FUTURES')&&(max===null||max===''||m.MaxDrawdownPct!=null&&m.MaxDrawdownPct<=Number(max))&&(m.ClosedTrades||0)>=min&&(q.get('excludeLiquidated')!=='1'||!m.Liquidated));const outcome=q.get('outcome')||'ALL';if(!['ALL','SURVIVED','LIQUIDATED','PROFIT','LOSS','FLAT','NO_TRADE','UNKNOWN'].includes(outcome))throw Error('Invalid outcome filter');rows=rows.filter(m=>outcome==='ALL'||(outcome==='SURVIVED'?['PROFIT','LOSS','FLAT'].includes(outcomeState(m)):outcomeState(m)===outcome));const [field,sign]=sorts[q.get('sort')]||sorts.FinalEquity;rows.sort((a,b)=>a[field]==null?(b[field]==null?b.FinalEquity-a.FinalEquity:1):b[field]==null?-1:(a[field]-b[field])*sign||b.FinalEquity-a.FinalEquity);const limit=Number(q.get('limit')||20),page=Number(q.get('page')||0);return {total:rows.length,page,rows:rows.slice(page*limit,(page+1)*limit)};}
    case '/api/trades':{const id=q.get('strategy'),model=(await modelData(run)).find(m=>m.StrategyID===id);if(!model)throw Error('模型不存在');return {model,trades:await tradeData(run,id),curve:null};}
    case '/api/lab/defaults':return json('data/lab-defaults.json');
    case '/api/lab/latest':return json('data/lab-latest.json');
