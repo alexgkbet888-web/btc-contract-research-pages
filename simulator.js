@@ -2,6 +2,16 @@
  const precise=(v,d=6)=>Number(v).toLocaleString('zh-CN',{maximumFractionDigits:d});
  const form=$('simForm');let ref=null,quote=null,rows=[],parentId=null,lastDeleted=null,result=null,timer=null,revision=0,loaded=false,saving=false;
  const field=name=>form.elements.namedItem(name);
+ function syncEntry(){
+  const manual=field('entryPriceMode').value==='manual',price=Number(field('price').value);
+  field('entryDrop').min=manual?'':'0';field('entryDrop').max=manual?'':'99';
+  // The field remains editable in both directions; derived values use full precision.
+  if(Number.isFinite(price)&&price>0){
+   if(manual){const entry=Number(field('entryPrice').value);field('entryDrop').value=field('entryPrice').value!==''&&Number.isFinite(entry)&&entry>0?String(Number(((1-entry/price)*100).toFixed(10))):'';}
+   else{const drop=Number(field('entryDrop').value);field('entryPrice').value=field('entryDrop').value!==''&&Number.isFinite(drop)&&drop>=0&&drop<=99?String(price*(1-drop/100)):'';}
+  }else if(!manual)field('entryPrice').value='';
+  $('simEntryHint').textContent=manual?'以手填入场价计算，回撤比例已反算（负数表示高于参考价）。修改参考价或回撤比例可恢复自动计算。':'自动计算：参考价格 ×（1 − 回撤比例）。也可以直接修改入场价格。';
+ }
  const message=(text,bad=false)=>{$('simMessage').textContent=text;$('simMessage').className=bad?'error':'micro';};
  function inputs(){const v={linkRisk:true};for(const e of form.elements){if(e.name)v[e.name]=e.type==='number'?(e.value===''?null:Number(e.value)):e.value;}if(v.leverageMode==='manual'&&(v.maxDrop==null||v.maxDrop<0||v.maxDrop>100))v.maxDrop=0;return v;}
  function controls(){
@@ -11,6 +21,8 @@
   if(ref&&auto){field('entryFee').value=+(ref[field('entryRole').value]*100).toFixed(6);field('exitFee').value=+(ref[field('exitRole').value]*100).toFixed(6);}
  }
  function render(r){
+  field('entryPrice').value=String(r.entryPrice);
+  if(r.entryPriceMode==='manual')field('entryDrop').value=String(Number(r.entryDropPct.toFixed(10)));
   result=r;const priceCard=(label,v,tone)=>`<div class="sim-price ${tone}"><span>${label}</span><strong>${num(Math.round(v*1e8)/1e8)}</strong><small>USDT</small></div>`;
   $('simPrices').innerHTML=priceCard('回撤入场价',r.entryPrice,'tone-ratio')+priceCard('目标止盈价',r.takeProfitPrice,'tone-positive')+priceCard('估算爆仓价',r.liquidationPrice,'tone-negative')+priceCard('可接受再跌目标价',r.targetRiskPrice,'tone-risk');
   $('simRisk').hidden=false;$('simRisk').className=r.riskWithinTolerance&&!r.liquidated?'notice sim-safe':'notice sim-danger';
@@ -27,7 +39,7 @@
  }
  function clearResult(){result=null;$('simSave').disabled=true;$('simPrices').innerHTML='<p class="micro">参数已变化，正在重新计算…</p>';$('simMetrics').innerHTML='';$('simRisk').hidden=true;$('simMethod').textContent='';}
  async function calculate(){
-  clearTimeout(timer);const ticket=++revision;clearResult();controls();
+  clearTimeout(timer);const ticket=++revision;clearResult();controls();syncEntry();
   if(!field('price').value){$('simPrices').innerHTML='<p class="micro">等待填写参考价格。</p>';message('等待币安报价，或手动填写参考价格。');return;}
   if(field('exitMode').value==='custom'&&!field('exitPrice').value){message('请填写模拟平仓价。',true);return;}
   const dependent=field('leverageMode').value==='risk'?'leverage':'maxDrop';
@@ -37,6 +49,9 @@
  }
  function changed(e){
   if(!e.target.name)return;
+  if(e.target.name==='entryPrice')field('entryPriceMode').value='manual';
+  if(['price','entryDrop'].includes(e.target.name))field('entryPriceMode').value='auto';
+  syncEntry();
   if(e.target.name==='leverage')field('leverageMode').value='manual';
   if(e.target.name==='maxDrop')field('leverageMode').value='risk';
   revision++;clearResult();controls();message('参数已变化，正在联动重算…');clearTimeout(timer);timer=setTimeout(calculate,150);
@@ -54,9 +69,9 @@
    controls();await calculate();
   }catch(e){message(e.message,true);}finally{$('simRefresh').disabled=false;}
  }
- function fill(values){for(const e of form.elements)if(e.name&&values[e.name]!==undefined)e.value=values[e.name];controls();}
+ function fill(values){field('entryPriceMode').value=values.entryPriceMode||'auto';for(const e of form.elements)if(e.name&&values[e.name]!==undefined)e.value=values[e.name];controls();syncEntry();}
  async function records(){
-  rows=await api('/api/sim/records');$('simRecordCount').textContent=`${rows.length} 条记录 · 当前浏览器保存 · 不跨设备自动同步`;$('simEmpty').hidden=rows.length>0;
+  rows=await api('/api/sim/records');$('simRecordCount').textContent=`${rows.length} 条记录 · 当前后台保存 · 与 GitHub 免费站分开`;$('simEmpty').hidden=rows.length>0;
   $('simRecords').innerHTML=[...rows].reverse().map(r=>{const x=r.result;return `<tr><td><strong>第 ${r.period} 期</strong><small class="sim-row-note">${esc(r.createdAt.slice(0,19).replace('T',' '))} UTC</small><small class="sim-row-note">${esc(r.note||'模拟记录')}${r.parentId?' · 承接 '+esc(r.parentId.slice(0,6)):''}</small><small class="sim-row-note">记录 ${esc(r.id.slice(0,6))}${r.parentId&&!rows.some(p=>p.id===r.parentId)?' · 上期已删除，保留本期快照':''}</small></td><td>${num(x.capital)}</td><td>${num(x.entryPrice)}<br><span class="tone-positive">${num(x.takeProfitPrice)}</span></td><td>${num(x.leverage)}×<br><span class="tone-negative">${num(x.liquidationPrice)}</span></td><td>${num(x.entryFee+x.exitFee)}<br>${num(x.fundingCost)}</td><td class="${valueTone(x.netPnL)}">${signedValue(x.netPnL,' U')}<br>${signedValue(x.returnPct)}${x.liquidated?'<br>估算强平 · 保守归零':''}</td><td><strong>${num(x.endingCapital)}</strong></td><td><div class="sim-row-actions"><button type="button" data-sim-action="load" data-id="${r.id}">载入快照</button><button type="button" data-sim-action="next" data-id="${r.id}" ${x.endingCapital<1?'disabled':''}>复利下一期</button><button type="button" class="sim-delete" data-sim-action="delete" data-id="${r.id}">删除</button></div></td></tr>`;}).join('');
  }
  form.onsubmit=async e=>{e.preventDefault();if(saving||!result)return;saving=true;$('simSave').disabled=true;clearTimeout(timer);
@@ -72,7 +87,7 @@
  };
  $('simUndo').onclick=async()=>{if(!lastDeleted)return;try{await api('/api/sim/restore',{id:lastDeleted});lastDeleted=null;$('simUndo').hidden=true;await records();message('已恢复记录。');}catch(e){message(e.message,true);}};
  $('simNew').onclick=()=>{parentId=null;field('capital').readOnly=false;$('simNote').value='';$('simParentNote').textContent='新建第一期 · 独立模拟';calculate();};
- $('simUsePrice').onclick=()=>{if(quote?.price&&!quote.stale){field('price').value=quote.price;calculate();}};
+ $('simUsePrice').onclick=()=>{if(quote?.price&&!quote.stale){field('price').value=quote.price;field('entryPriceMode').value='auto';calculate();}};
  $('simCalculate').onclick=calculate;$('simRefresh').onclick=market;$('simReloadRecords').onclick=()=>records().catch(e=>message(e.message,true));
  $('simExport').onclick=async()=>{try{await records();const blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='BTCUSDT-逐期模拟记录.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(e){message(e.message,true);}};
  async function init(){if(loaded)return;loaded=true;try{await Promise.all([market(),records()]);}catch(e){message(e.message,true);loaded=false;}}
